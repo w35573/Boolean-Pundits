@@ -4,6 +4,9 @@ const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
 
+const userRoutes = require('./routes/user');
+const studentRoutes = require('./routes/students');
+
 app.use(express.json());
 app.use(cors());
 
@@ -13,12 +16,18 @@ app.get("/", (req, res, next) => {
     res.send("API IS LIVE!");
 });
 
-app.get('/test', (req, res, next) => {
+app.get('/api/test', (req, res, next) => {
     res.status(200).json({
         error: "false",
         data: "test"
     });
 });
+
+//User routes
+app.use('/api/user', userRoutes);
+
+//Student routes
+app.use('/api/student', studentRoutes);
 
 // listen for requests
 app.listen(port, () => {

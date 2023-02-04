@@ -1,0 +1,29 @@
+.outer-box {
+  background-color: #f5f5f5;
+}
+
+.desc {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+  font-weight: 400;
+}
+
+@media only screen and (max-width: 768px) {
+  .testimonial p {
+    font-size: 0.8rem;
+    line-height: 1.5rem;
+  }
+
+  .testimonial h6 {
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .testimonial img {
+    width: 60px !important;
+    height: 60px !important;
+    object-fit: cover;
+  }
+}
