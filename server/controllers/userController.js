@@ -39,10 +39,10 @@ const signupUser = async (req, res) => {
 
 // update Profile
 const updateProfile = async (req, res) => {
-    const { _id, username, fname, lname, mobile, country, state, district, address1, address2, pincode } = req.body
+    const { email, password, fname, mname, lname, age, gender, mobile, country, state, district, address1, address2, pinCode, hoursCompleted, highestQualification, stream } = req.body
 
     try {
-        const user = await User.updateOne({ _id: _id }, { username, fname, lname, mobile, country, state, district, address1, address2, pincode })
+        const user = await User.updateOne({ _id: _id }, { email, password, fname, mname, lname, age, gender, mobile, country, state, district, address1, address2, pinCode, hoursCompleted, highestQualification, stream })
 
         res.status(200).json({ user })
     } catch (error) {

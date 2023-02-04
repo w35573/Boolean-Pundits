@@ -28,6 +28,8 @@ const userSchema = new Schema({
     status: { type: String, default: 'pending' } //active, completed
 })
 
+
+
 // static signup method
 userSchema.statics.signup = async function (email, password) {
 
