@@ -187,7 +187,7 @@ const Volunteer = () => {
             
 
             
-          axios
+          await axios
             .patch("/api/user/update", {  
               email: email,
               password: password,
