@@ -12,6 +12,7 @@ import Cancel from "../pages/Cancel";
 import Success from "../pages/Success";
 import Sponsor from "../pages/Sponsor";
 import Volunteer from "../pages/Volunteer";
+import Student from "../pages/Student";
 
 
 const Routers = () => {
@@ -24,7 +25,8 @@ const Routers = () => {
       <Route path="/about" element={<About />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/sponsor" element={<Sponsor />} />
-      <Route path="/volunteer" element={<Volunteer />} />
+      <Route path="/volunteer" exact element={(user && user.role) != 'student' ? <Volunteer /> : <Navigate to="/home" />} />
+      <Route path="/student" element={<Student />} />
       <Route path="/login" exact element={!user ? <Login /> : <Navigate to="/home" />} />
       <Route path="/signup" exact element={!user ? <Signup /> : <Navigate to="/home" />} />
       <Route path="/profile" exact element={user ? <Profile /> : <Navigate to="/home" />} />

@@ -1,4 +1,41 @@
 const Student = require('../models/studentModel')
+const jwt = require('jsonwebtoken')
+
+const createToken = (_id) => {
+    return jwt.sign({ _id }, `${process.env.SECRET}`, { expiresIn: '3d' })
+}
+
+// login a student
+const loginStudent = async (req, res) => {
+    const { email, password } = req.body
+
+    try {
+        const student = await Student.login(email, password)
+
+        // create a token
+        const token = createToken(student._id)
+
+        res.status(200).json({ id: student._id, email, token, role: student.role })
+    } catch (error) {
+        res.status(400).json({ error: error.message })
+    }
+}
+
+// signup a student
+const signupStudent = async (req, res) => {
+    const { email, password } = req.body
+
+    try {
+        const student = await Student.signup(email, password)
+
+        // create a token
+        const token = createToken(student._id)
+
+        res.status(200).json({ id: student._id, email, token, role: student.role })
+    } catch (error) {
+        res.status(400).json({ error: error.message })
+    }
+}
 
 const getStudentById = async (req, res) => {
     const { uid } = req.params;
@@ -25,12 +62,12 @@ const getAllStudents = async (req, res) => {
 
 // enter student details
 const enterStudent = async (req, res) => {
-    const { UID, fName, mName, lName, age, mobile, email, schoolName, schoolAddress, standard, country, state, district, address1, address2, pinCode } = req.body
+    const { UID, email, password, fName, mName, lName, age, gender, mobile, schoolName, schoolAddress, standard, country, state, district, address1, address2, pinCode, stream } = req.body
 
     try {
-        const student = await Student.entryData(UID, fName, mName, lName, age, mobile, email, schoolName, schoolAddress, standard, country, state, district, address1, address2, pinCode)
+        const student = await Student.entryData(UID, email, password, fName, mName, lName, age, gender, mobile, schoolName, schoolAddress, standard, country, state, district, address1, address2, pinCode, stream)
 
-        res.status(200).json({ UID: student.UID, firstName: student.fName, middleName: student.mName, lastName: student.lName })
+        res.status(200).json({ UID: student.UID, email: student.email, password: student.password, role: student.role })
     } catch (error) {
         res.status(400).json({ error: error.message })
     }
@@ -51,10 +88,10 @@ const insertManyEntries = async (req, res) => {
 
 // update Student
 const updateStudent = async (req, res) => {
-    const { UID, fName, mName, lName, age, mobile, email, schoolName, schoolAddress, standard, country, state, district, address1, address2, pinCode } = req.body
+    const { UID, email, password, fName, mName, lName, age, gender, mobile, schoolName, schoolAddress, standard, country, state, district, address1, address2, pinCode, stream } = req.body
 
     try {
-        const student = await Student.updateOne({ UID: UID }, { UID, fName, mName, lName, age, mobile, email, schoolName, schoolAddress, standard, country, state, district, address1, address2, pinCode })
+        const student = await Student.updateOne({ UID: UID }, { UID, email, password, fName, mName, lName, age, gender, mobile, schoolName, schoolAddress, standard, country, state, district, address1, address2, pinCode, stream })
 
         res.status(200).json({ student })
     } catch (error) {
@@ -85,5 +122,7 @@ module.exports = {
     enterStudent,
     updateStudent,
     deleteStudent,
-    insertManyEntries
+    insertManyEntries,
+    loginStudent,
+    signupStudent
 }

@@ -6,6 +6,7 @@ const app = express();
 
 const userRoutes = require('./routes/user');
 const studentRoutes = require('./routes/students');
+const adminRoutes = require('./routes/admin');
 
 app.use(express.json());
 app.use(cors());
@@ -28,6 +29,9 @@ app.use('/api/user', userRoutes);
 
 //Student routes
 app.use('/api/student', studentRoutes);
+
+//Admin routes
+app.use('/api/admin', adminRoutes);
 
 // listen for requests
 app.listen(port, () => {

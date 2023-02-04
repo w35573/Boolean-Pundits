@@ -7,9 +7,11 @@ const Schema = mongoose.Schema
 const userSchema = new Schema({
     email: { type: String, required: true, unique: true },
     password: { type: String, required: true },
-    username: { type: String, min: 3, max: 20 },
     fname: { type: String, min: 3, max: 25 },
+    mname: { type: String, max: 30 },
     lname: { type: String, max: 25 },
+    age: { type: Number },
+    gender: { type: String },
     mobile: { type: String, min: 10, max: 10 },
     country: { type: String },
     state: { type: String },
@@ -18,8 +20,12 @@ const userSchema = new Schema({
     address2: { type: String, max: 100 },
     pinCode: { type: String, min: 6, max: 6 },
     profilePicture: { type: String, default: '' },
+    hoursCompleted: { type: Number },
+    highestQualification: { type: String },
+    stream: { type: String, default: '' }, //10th and all
     //student, volunteer, admin
-    role: { type: String, default: 'student' }
+    role: { type: String, default: 'volunteer' },
+    status: { type: String, default: 'pending' } //active, completed
 })
 
 // static signup method

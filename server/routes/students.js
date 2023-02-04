@@ -1,7 +1,7 @@
 const express = require('express');
 
 // controller functions
-const { getStudentById, enterStudent, getAllStudents, updateStudent, deleteStudent, insertManyEntries } = require('../controllers/studentController');
+const { getStudentById, enterStudent, getAllStudents, updateStudent, deleteStudent, insertManyEntries, loginStudent, signupStudent } = require('../controllers/studentController');
 
 const router = express.Router()
 
@@ -10,6 +10,12 @@ router.get('/get/:uid', getStudentById)
 
 // get all students
 router.get('/getAll', getAllStudents)
+
+// login route
+router.post('/login', loginStudent)
+
+// signup route
+router.post('/signup', signupStudent)
 
 // student entry route
 router.post('/entry', enterStudent)

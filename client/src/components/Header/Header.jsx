@@ -39,10 +39,13 @@ const Header = () => {
   const { user } = useAuthContext();
 
   if (user) {
-    navLinks.push({
-      path: "/profile",
-      display: "Profile",
-    });
+    if (user.role == "student") {
+      navLinks[2].path = "/student";
+      navLinks[2].display = "Student";
+    } else if (user.role == "admin") {
+      navLinks[2].path = "/admin";
+      navLinks[2].display = "Admin";
+    }
   } else if (navLinks.some((link) => link.path === "/profile")) {
     navLinks.pop();
   }
