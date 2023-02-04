@@ -4,6 +4,7 @@ import { tokens } from "../../theme";
 import { mockDataContacts } from "../../data/mockData";
 import Header from "../../components/Header2";
 import { useTheme } from "@mui/material";
+import {IoArrowBackOutline} from 'react-icons/io5'
 
 const Students = () => {
   const theme = useTheme();
@@ -53,7 +54,11 @@ const Students = () => {
   ];
 
   return (
-    <Box m="20px">
+
+    <Box m="20px" flex >
+      <a href="/admin">
+        <IoArrowBackOutline />
+      </a>
       <Header
         title="STUDENTS"
         subtitle="List of Contacts for Future Reference"

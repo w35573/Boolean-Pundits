@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import TopNav from "./pages/global/TopNav";
 import Sidebar from "./pages/global/Sidebar";
-import Dashboard from "./pages/dashboard";
+// import Dashboard from "./pages/dashboard";
 import Students from "./pages/students";
 // import Invoices from "./pages/invoices";
 // import Contacts from "./pages/contacts";
@@ -14,6 +14,7 @@ import Students from "./pages/students";
 // import Geography from "./pages/geography";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { ColorModeContext, useMode } from "./theme";
+// import {BackArrow} from 
 // import Calendar from "./pages/calendar/calendar";
 
 function AdminDashboard() {
@@ -28,10 +29,11 @@ function AdminDashboard() {
           {/* <Sidebar isSidebar={isSidebar} /> */}
         
           <main className="content">
-          <TopNav/>
+          <TopNav isSidebar={isSidebar} setIsSidebar={setIsSidebar} />
+          <Sidebar isSidebar={isSidebar} />
             <Routes>
-              <Route path="/" element={<Dashboard />} />
-              <Route path="/students" element={<Students />} />
+              {/* <Route path="/" element={<Dashboard />} /> */}
+              <Route path="/admin/students" element={<Students />} />
               {/* <Route path="/contacts" element={<Contacts />} />
               <Route path="/invoices" element={<Invoices />} />
               <Route path="/form" element={<Form />} />

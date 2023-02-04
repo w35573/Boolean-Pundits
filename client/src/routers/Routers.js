@@ -13,6 +13,7 @@ import Success from "../pages/Success";
 import Sponsor from "../pages/Sponsor";
 import Volunteer from "../pages/Volunteer";
 import Students from "../pages/students";
+import AdminDashboard from "../AdminDashboard";
 
 
 const Routers = () => {
@@ -29,10 +30,10 @@ const Routers = () => {
       <Route path="/login" exact element={!user ? <Login /> : <Navigate to="/home" />} />
       <Route path="/signup" exact element={!user ? <Signup /> : <Navigate to="/home" />} />
       <Route path="/profile" exact element={user ? <Profile /> : <Navigate to="/home" />} />
-
+      <Route path="/admin" element={<AdminDashboard />} />
       <Route path="/cancel" element={<Cancel />} />
       <Route path="/success" element={<Success />} />
-      <Route path="/students" element={<Students />} />
+      <Route path="/admin/students" element={<Students />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );
