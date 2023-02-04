@@ -1,0 +1,60 @@
+@media only screen and (max-width: 992px) {
+    .volunteer__page-content h2 {
+      font-size: 1.5rem;
+    }
+
+
+    
+  }
+
+  .vol-form-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding:1rem;
+    align-items: center;
+
+   
+
+  }
+  .vol-form-header{
+    font-size:1.5rem;
+    font-weight:bold;
+
+   
+
+  }
+
+  .form-sign-in{
+    margin-top:1rem;
+  }
+  
+  .vol-form-container .form-row{
+    display: flex;
+    /* flex-direction: column; */
+    justify-content:space-between;
+    gap:1rem;
+    
+
+
+  }
+
+  form{
+    align-items: center;
+  }
+
+  .vol-form-container .form-group{
+    display: flex;
+    flex-direction:column;
+    margin-top:1rem;
+  }
+  
+
+  
+  
+  @media only screen and (max-width: 768px) {
+    .voulnteer__page-img {
+      display: none;
+    }
+  }
+  
