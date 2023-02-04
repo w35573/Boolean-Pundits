@@ -15,7 +15,6 @@ import Volunteer from "../pages/Volunteer";
 import Students from "../pages/students";
 import AdminDashboard from "../AdminDashboard";
 import Student from "../pages/Student";
-import Student from "../pages/Student";
 
 
 const Routers = () => {
