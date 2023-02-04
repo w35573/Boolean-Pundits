@@ -8,12 +8,20 @@
     "@chakra-ui/react": "^2.4.9",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
+    "@fullcalendar/core": "^6.1.1",
+    "@fullcalendar/list": "^6.1.1",
+    "@fullcalendar/timegrid": "^6.1.1",
     "@lottiefiles/react-lottie-player": "^3.4.7",
+    "@mui/icons-material": "^5.11.0",
+    "@mui/material": "^5.11.7",
+    "@mui/x-data-grid": "^5.17.22",
+    
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.0.0",
     "bootstrap": "^5.2.2",
+    "formik": "^2.2.9",
     "framer-motion": "^8.4.3",
     "generate-username-from-email": "^1.0.2",
     "mapbox-gl": "1.13.0",
@@ -22,6 +30,7 @@
     "react-dom": "^18.2.0",
     "react-loading-skeleton": "^3.1.0",
     "react-map-gl": "^7.0.19",
+    "react-pro-sidebar": "^0.7.1",
     "react-redux": "^8.0.4",
     "react-router-dom": "^6.4.1",
     "react-scripts": "5.0.1",
@@ -32,7 +41,8 @@
     "remixicon": "^2.5.0",
     "simplebar-react": "^3.1.0",
     "slick-carousel": "^1.8.1",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "yup": "^0.32.11"
   },
   "scripts": {
     "start": "react-scripts start",

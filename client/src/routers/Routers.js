@@ -12,6 +12,7 @@ import Cancel from "../pages/Cancel";
 import Success from "../pages/Success";
 import Sponsor from "../pages/Sponsor";
 import Volunteer from "../pages/Volunteer";
+import Students from "../pages/students";
 
 
 const Routers = () => {
@@ -31,7 +32,7 @@ const Routers = () => {
 
       <Route path="/cancel" element={<Cancel />} />
       <Route path="/success" element={<Success />} />
-
+      <Route path="/students" element={<Students />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );
