@@ -22,7 +22,7 @@ const Home = () => {
             <Row className="form__row" style={{ borderRadius: "15px" }}>
               <Col lg="4" md="4">
                 <div className="find__cars-left">
-                  <h2>Let's take that awaited Road trip</h2>
+                  <h2>Educating the future of India</h2>
                 </div>
               </Col>
 

@@ -19,7 +19,7 @@ const studentSchema = new Schema({
     address1: { type: String, max: 100 },
     address2: { type: String, max: 100 },
     pinCode: { type: Number },
-    stream: {type: String, default: ''}
+    stream: {type: String, default: ''} //
 });
 
 // static entryData method
