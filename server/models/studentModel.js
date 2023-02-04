@@ -5,7 +5,7 @@ const validator = require('validator')
 const Schema = mongoose.Schema
 
 const studentSchema = new Schema({
-    UID: { type: Number, unique: true },
+    UID: { type: Number },
     email: { type: String, unique: true },
     password: { type: String, required: true },
     fName: { type: String, min: 3, max: 25 },
