@@ -2,34 +2,29 @@ import {React, useState} from "react";
 
 import CommonSection from "../components/UI/CommonSection";
 import Helmet from "../components/Helmet/Helmet";
-import AboutSection from "../components/UI/AboutSection";
-import { Container, Row, Col } from "reactstrap";
-import BecomeDriverSection from "../components/UI/BecomeDriverSection";
-
-import driveImg from "../assets/all-images/drive.jpg";
-import OurMembers from "../components/UI/OurMembers";
+import { useAuthContext } from "../hooks/useAuthContext";
 import "../styles/volunteer.css";
 import axios from 'axios';
 
 const Volunteer = () => {
 
+  const { user } = useAuthContext();
 
-  const [fName, setFName]=useState();
-  const [mName, setMName]=useState();
-  const [lName, setLName]=useState();
-  const [email, setEmail]=useState();
-  const [password, setPassword]=useState();
-  const [age, setAge]=useState();
-  const [gender, setGender]=useState();
-  const [mobile, setMobile]=useState();
-  const [address1, setAddress1]=useState();
-  const [address2, setAddress2]=useState();
-  const [qualification, setQualification]=useState();
-  const [stream, setStream]=useState();
-  const [country, setCountry]=useState();
-  const [state, setState]=useState();
-  const [district, setDistrict]=useState();
-  const [pinCode, setPinCode]=useState();
+
+  const [fName, setFName]=useState('');
+  const [mName, setMName]=useState('');
+  const [lName, setLName]=useState('');
+  const [age, setAge]=useState(0);
+  const [gender, setGender]=useState('');
+  const [mobile, setMobile]=useState('');
+  const [address1, setAddress1]=useState('');
+  const [address2, setAddress2]=useState('');
+  const [qualification, setQualification]=useState('');
+  const [stream, setStream]=useState('');
+  const [country, setCountry]=useState('');
+  const [state, setState]=useState('');
+  const [district, setDistrict]=useState('');
+  const [pinCode, setPinCode]=useState('');
 
   
   const handleChangeFName = (e) => {
@@ -43,14 +38,6 @@ const Volunteer = () => {
   const handleChangeLName = (e) => {
     e.preventDefault();
     setLName(e.target.value);
-  };
-  const handleChangeEmail = (e) => {
-    e.preventDefault();
-    setEmail(e.target.value);
-  };
-  const handleChangePassword = (e) => {
-    e.preventDefault();
-    setPassword(e.target.value);
   };
   const handleChangeCountry = (e) => {
     e.preventDefault();
@@ -102,16 +89,6 @@ const Volunteer = () => {
       <div className="vol-form-container">
       <div class="vol-form-header">Become a volunteer at Yasham</div>
         <form class="vol-form">
-          <div class="form-row">
-            <div class="form-group col-md-6">
-              <label for="inputEmail4">Email</label>
-              <input type="email" class="form-control" id="inputEmail4" placeholder="Email" onChange={handleChangeEmail} />
-            </div>
-            <div class="form-group col-md-6">
-              <label for="inputPassword4">Password</label>
-              <input type="password" class="form-control" id="inputPassword4" placeholder="Password" onChange={handleChangePassword}/>
-            </div>
-          </div>
           <div class="form-row">
             <div class="form-group col-md-4">
               <label for="inputFName">First Name</label>
@@ -184,13 +161,10 @@ const Volunteer = () => {
           </div>
           
           <button onClick={async () => {
-            
-
-            
+                
           await axios
             .patch("/api/user/update", {  
-              email: email,
-              password: password,
+              email: user && user.email,
               fname:fName,
               mname:mName,
               lname:lName,
@@ -202,7 +176,7 @@ const Volunteer = () => {
               district:district,
               address1:address1,
               address2:address2,
-              pincode:pinCode,
+              pinCode:pinCode,
               highestQualification: qualification,
               stream:stream
             })
@@ -213,7 +187,7 @@ const Volunteer = () => {
             .catch((err) => {
               console.log(err.message);
             });
-        }} class="btn btn-primary form-sign-in">Sign in</button>
+        }} class="btn btn-primary form-sign-in">Apply</button>
         </form>
       </div>
 

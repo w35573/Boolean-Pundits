@@ -39,14 +39,19 @@ const signupUser = async (req, res) => {
 
 // update Profile
 const updateProfile = async (req, res) => {
-    const { email, password, fname, mname, lname, age, gender, mobile, country, state, district, address1, address2, pinCode, hoursCompleted, highestQualification, stream } = req.body
+    const { email, fname, mname, lname, age, gender, mobile, country, state, district, address1, address2, pinCode, hoursCompleted, highestQualification, stream } = req.body
 
     try {
-        const user = await User.updateOne({ _id: _id }, { email, password, fname, mname, lname, age, gender, mobile, country, state, district, address1, address2, pinCode, hoursCompleted, highestQualification, stream })
+        const user = await User.updateOne({ email: email }, { fname, mname, lname, age, gender, mobile, country, state, district, address1, address2, pinCode, hoursCompleted, highestQualification, stream })
 
         res.status(200).json({ user })
+
+        console.log(user)
+
     } catch (error) {
         res.status(400).json({ error: error.message });
+
+        console.log(error)
     }
 }
 

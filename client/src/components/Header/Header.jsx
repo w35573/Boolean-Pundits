@@ -16,10 +16,6 @@ const navLinks = [
     path: "/about",
     display: "About Us",
   },
-  {
-    path: "/volunteer",
-    display: "Volunteer",
-  },
 
   {
     path: "/sponsor",
@@ -39,12 +35,21 @@ const Header = () => {
   const { user } = useAuthContext();
 
   if (user) {
-    if (user.role == "student") {
-      navLinks[2].path = "/student";
-      navLinks[2].display = "Student";
-    } else if (user.role == "admin") {
-      navLinks[2].path = "/admin";
-      navLinks[2].display = "Admin";
+    if (user.role === "student") {
+      navLinks.push({
+        path: "/student",
+        display: "Student"
+      })
+    } else if (user.role === "admin") {
+      navLinks.push({
+        path: "/admin",
+        display: "Admin"
+      })
+    } else if(user.role === "volunteer") {
+      navLinks.push({
+        path: "/volunteer",
+        display: "Volunteer"
+      })
     }
   } else if (navLinks.some((link) => link.path === "/profile")) {
     navLinks.pop();

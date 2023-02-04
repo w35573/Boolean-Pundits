@@ -14,11 +14,6 @@ const quickLinks = [
     path: "#",
     display: "Privacy Policy",
   },
-
-  {
-    path: "/volunteer",
-    display: "Volunteer",
-  },
   {
     path: "/sponsor",
     display: "Sponsor",
