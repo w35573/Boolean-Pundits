@@ -6,7 +6,7 @@ const { getStudentById, enterStudent, getAllStudents, updateStudent, deleteStude
 const router = express.Router()
 
 // get student by id
-router.get('/get/:uid', getStudentById)
+router.get('/get/:email', getStudentById)
 
 // get all students
 router.get('/getAll', getAllStudents)

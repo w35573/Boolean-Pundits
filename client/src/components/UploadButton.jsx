@@ -35,20 +35,6 @@ const UploadButton = () => {
     });
   };
 
-  // useEffect(() => {
-  //   if (items.length != 0) {
-  //     axios
-  //       .post("/api/student/enterAll", items)
-  //       .then((response) => response.data)
-  //       .then((data) => {
-  //         console.log(data);
-  //       })
-  //       .catch((err) => {
-  //         console.log(err.message);
-  //       });
-  //   }
-  // }, []);
-
   return (
     <div>
       <input
@@ -60,6 +46,7 @@ const UploadButton = () => {
       />
 
       <button
+        className="btn35573"
         onClick={async () => {
           axios
             .post("/api/student/enterAll", { students: items })
@@ -72,7 +59,7 @@ const UploadButton = () => {
             });
         }}
       >
-        Upload
+        Upload to Database
       </button>
     </div>
   );

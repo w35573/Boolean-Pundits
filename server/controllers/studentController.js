@@ -38,10 +38,12 @@ const signupStudent = async (req, res) => {
 }
 
 const getStudentById = async (req, res) => {
-    const { uid } = req.params;
+    const { email } = req.params;
+
+    console.log(req.params);
 
     try {
-        const student = await Student.findOne({ UID: `${uid}` });
+        const student = await Student.findOne({ email: `${email}` });
         console.log(student);
 
         res.status(200).json({ student });

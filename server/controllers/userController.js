@@ -76,10 +76,10 @@ const deleteProfile = async (req, res) => {
 // get user by _id
 
 const getUserById = async (req, res) => {
-    const { _id } = req.params;
+    const { email } = req.params;
 
     try {
-        const user = User.findOne({ _id: `${_id}` });
+        const user = User.findOne({ email: `${email}` });
         console.log(user);
 
         res.status(200).json({ user });
