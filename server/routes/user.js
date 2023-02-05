@@ -6,7 +6,7 @@ const { loginUser, signupUser, updateProfile, deleteProfile, getUsers, getUserBy
 const router = express.Router()
 
 // get user by id
-router.get('/get', getUserById)
+router.get('/get/:email', getUserById)
 
 // get all users
 router.get('/getAll', getUsers)

@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import {
   Avatar,
   AvatarBadge,
@@ -18,10 +18,34 @@ import {
   VStack,
 } from "@chakra-ui/react";
 
-import tim from "../../../assets/all-images/tim-cook.jpg";
+import tim from "../../../assets/all-images/profile.png";
 
+import axios from "axios"
+import { useAuthContext } from "../../../hooks/useAuthContext";
 function Profile() {
   const [userProfile, setUserProfile] = useState(null);
+
+  const [data, setUser] = useState([]);
+
+  const { user } = useAuthContext();
+
+
+
+  useEffect(async () => {
+    console.log(user);
+
+    await axios
+      .get(`/api/student/get/${user.email}`)
+      .then((res) => {
+        console.log(res.data.student);
+        setUser(res.data.student);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+
+
 
   const { isOpen, onOpen, onClose } = useDisclosure();
   const profileImage = useRef(null);
@@ -92,10 +116,10 @@ function Profile() {
       </Modal>
       <VStack spacing={1}>
         <Heading as="h3" fontSize="xl" color="brand.dark">
-          Tim Cook
+          {data.fName + " " + data.lName}
         </Heading>
         <Text color="brand.gray" fontSize="sm">
-          CEO of Apple
+          {data.role}
         </Text>
       </VStack>
     </VStack>

@@ -139,5 +139,5 @@ module.exports = {
     deleteStudent,
     insertManyEntries,
     loginStudent,
-    signupStudent
+    signupStudent,
 }

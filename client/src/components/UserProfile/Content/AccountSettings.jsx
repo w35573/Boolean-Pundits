@@ -72,7 +72,7 @@ function AccountSettings() {
         <Input
           focusBorderColor="brand.blue"
           type="text"
-          placeholder={data.district}
+          placeholder={data.country}
         />
       </FormControl>
     </Grid>

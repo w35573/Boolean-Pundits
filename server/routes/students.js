@@ -1,7 +1,7 @@
 const express = require('express');
 
 // controller functions
-const { getStudentById, enterStudent, getAllStudents, updateStudent, deleteStudent, insertManyEntries, loginStudent, signupStudent } = require('../controllers/studentController');
+const { getStudentById, enterStudent, getAllStudents, updateStudent, deleteStudent, insertManyEntries, loginStudent, signupStudent, updateHours } = require('../controllers/studentController');
 
 const router = express.Router()
 
