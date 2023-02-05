@@ -6,7 +6,7 @@ import AboutSection from "../components/UI/AboutSection";
 import { Container, Row, Col } from "reactstrap";
 import BecomeDriverSection from "../components/UI/BecomeDriverSection";
 
-import driveImg from "../assets/all-images/drive.jpg";
+import driveImg from "../assets/all-images/about-2.jpg";
 import OurMembers from "../components/UI/OurMembers";
 import "../styles/about.css";
 
@@ -28,28 +28,17 @@ const About = () => {
             <Col lg="6" md="6" sm="12">
               <div className="about__page-content">
                 <h2 className="section__title">
-                  Enjoy your holidays with our wheels
+                  Our Mission
                 </h2>
 
                 <p className="section__description"></p>
 
                 <p className="section__description">
-                  Vroom is India’s fastest growing shared mobility platform,
-                  providing both self-drive car rental and subscription services
-                  to its customers. Vroom currently operates a fleet of 3500+
-                  cars in 22 cities within India.
+                Every child deserves a chance at life irrespective of his or her background. We empower children to maximize their potential and transform their lives.
                 </p>
 
                 <p className="section__description">
-                  Vroom’s self-drive car rental operations expanded to Hyderabad
-                  and Bengaluru. From there, the company has continued to expand
-                  its geographical coverage and now operates across 22 cities
-                  within India i.e. Delhi/NCR, Bengaluru, Hyderabad, Chennai,
-                  Mumbai, Pune, Kolkata, Ahmedabad, Mangalore, Chandigarh,
-                  Jaipur, Vizag, Kochi, Coimbatore, Mysore, Tirupati,
-                  Vijayawada, Trivandrum, Surat, Nagpur, Bhubaneswar and
-                  Vadodara, with its self-drive car rental and subscription
-                  services.
+                Our Vision is to educate, enlighten and empower the future generations through holistic education. Yasham Foundation, a Mumbai Based NGO has tied up with reputed educational portals and coaching institutions that offer free coaching or charge a nominal fee to help these students.
                 </p>
 
                 <div className=" d-flex align-items-center gap-3 mt-4">
@@ -68,7 +57,6 @@ const About = () => {
         </Container>
       </section>
 
-      <BecomeDriverSection />
 
       <section>
         <Container>

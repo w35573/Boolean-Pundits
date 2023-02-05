@@ -3,6 +3,7 @@ import React from "react";
 import { Container, Row, Col, ListGroup, ListGroupItem } from "reactstrap";
 import { Link } from "react-router-dom";
 import "../../styles/footer.css";
+import {GiTeacher} from "react-icons/gi"
 
 const quickLinks = [
   {
@@ -36,19 +37,15 @@ const Footer = () => {
             <div className="logo footer__logo">
               <h1>
                 <Link to="/home" className=" d-flex align-items-center gap-2">
-                  <i className="ri-car-line"></i>
+                <GiTeacher></GiTeacher>
                   <span>
-                    Vroom <br /> Car Rental
+                    Yasham <br /> 
                   </span>
                 </Link>
               </h1>
             </div>
             <p className="footer__logo-content">
-              Car subscription from Vroom provides the flexibility of having a
-              car anytime you want, as well as the assurance of a sanitized and
-              virus free vehicle for your own self drive. The car sanitization
-              process encompasses all the preventive hygiene best practices
-              directed by the World Health Organization.
+            Every child deserves a chance at life irrespective of his or her background. We empower children to maximize their potential and transform their lives Our endeavour is to provide quality education, using the latest tools and technology. We supplement formal school education by conducting after school classes for students, to develop them in to productive members of the society.
             </p>
           </Col>
 
@@ -102,7 +99,7 @@ const Footer = () => {
             <div className="footer__bottom">
               <p className="section__description d-flex align-items-center justify-content-center gap-1 pt-4">
                 <i className="ri-copyright-line"></i>Copyright {year}, Developed
-                by w35573. All rights reserved.
+                by Boolean Pandits. All rights reserved.
               </p>
             </div>
           </Col>

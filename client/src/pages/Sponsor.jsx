@@ -15,7 +15,7 @@ import PayButton from "../components/UI/PayButton";
 const Sponsor = () => {
    return (
       <Helmet title="About">
-        <CommonSection title="Partners" />
+        <CommonSection title="Our 5 point programs" />
         <SponsorSection aboutClass="aboutPage" />
   
         

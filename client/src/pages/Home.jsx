@@ -37,35 +37,24 @@ const Home = () => {
       {/* about section */}
       <AboutSection />
 
-      {/* services section */}
-      <section>
-        <Container>
-          <Row>
-            <Col lg="12" className="mb-5 text-center">
-              <h2 className="section__title">Popular Services</h2>
-            </Col>
-
-            <ServicesList />
-          </Row>
-        </Container>
-      </section>
+     
 
       {/* car offer section */}
       <section>
         <Container>
           <Row>
             <Col lg="12" className="text-center mb-5">
-              <h2 className="section__title">Hot Offers</h2>
+              <h2 className="section__title">Our Sponsors</h2>
             </Col>
 
-            {carData.slice(0, 6).map((item) => (
+            {carData.slice(0, 3).map((item) => (
               <CarItem item={item} key={item.id} />
             ))}
           </Row>
         </Container>
       </section>
       {/* become a driver section */}
-      <BecomeDriverSection />
+      
 
       {/* testimonial section */}
       <section>

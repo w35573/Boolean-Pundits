@@ -48,25 +48,8 @@ const FindCarForm = () => {
           <select onChange={handleChangeLocation} id="location">
             <option value="0">Select Location</option>
             <option value="bangalore">Bangalore</option>
-            <option value="hyderabad">Hyderabad</option>
             <option value="chennai">Chennai</option>
             <option value="mumbai">Mumbai</option>
-            <option value="delhi-ncr">Delhi-NCR</option>
-            <option value="pune">Pune</option>
-            <option value="kolkata">Kolkata</option>
-            <option value="ahmedabad">Ahmedabad</option>
-            <option value="bhubaneswar">Bhubaneswar</option>
-            <option value="chandigarh">Chandigarh</option>
-            <option value="coimbatore">Coimbatore</option>
-            <option value="jaipur">Jaipur</option>
-            <option value="kochi">Kochi</option>
-            <option value="mangalore">Mangalore</option>
-            <option value="mysore">Mysore</option>
-            <option value="nagpur">Nagpur</option>
-            <option value="tirupati">Tirupati</option>
-            <option value="trivandrum">Trivandrum</option>
-            <option value="vijayawada">Vijayawada</option>
-            <option value="vizag">Vizag</option>
           </select>
         </FormGroup>
 
@@ -116,7 +99,7 @@ const FindCarForm = () => {
               to={`/cars/${startDate}/${startTime}/${endDate}/${endTime}/${location}`}
               className="style-link"
             >
-              Find Car
+              Book An Appointment
             </Link>
           </button>
         </FormGroup>

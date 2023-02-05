@@ -1,7 +1,7 @@
 // import all images from assets/images directory
-import img01 from "../all-images/cars-img/nissan-offer.png";
-import img02 from "../all-images/cars-img/offer-toyota.png";
-import img03 from "../all-images/cars-img/bmw-offer.png";
+import img01 from "../all-images/cars-img/partner-1.png";
+import img02 from "../all-images/cars-img/partner-2.jpg";
+import img03 from "../all-images/cars-img/partner-3.png";
 import img04 from "../all-images/cars-img/nissan-offer.png";
 import img05 from "../all-images/cars-img/offer-toyota.png";
 import img06 from "../all-images/cars-img/mercedes-offer.png";
@@ -13,7 +13,7 @@ const carData = [
     id: 1,
     brand: "Tesla",
     rating: 112,
-    carName: "Tesla Malibu",
+    carName: "NM Medical",
     imgUrl: img01,
     model: "Model 3",
     price: 50,
@@ -29,7 +29,7 @@ const carData = [
     id: 2,
     brand: "Toyota",
     rating: 102,
-    carName: "Toyota Aventador",
+    carName: "Bombay International School",
     imgUrl: img02,
     model: "Model-2022",
     price: 50,
@@ -45,7 +45,7 @@ const carData = [
     id: 3,
     brand: "BMW",
     rating: 132,
-    carName: "BMW X3",
+    carName: "Wellknown Polyesters LTD",
     imgUrl: img03,
     model: "Model-2022",
     price: 65,
@@ -109,7 +109,7 @@ const carData = [
     id: 7,
     brand: "Audi",
     rating: 82,
-    carName: "Audi Fiesta",
+    carName: "NM Medical",
     imgUrl: img07,
     model: "Model 3",
     price: 50,
@@ -125,7 +125,7 @@ const carData = [
     id: 8,
     brand: "Colorado",
     rating: 52,
-    carName: "Rolls Royce Colorado",
+    carName: "Bombay International School",
     imgUrl: img08,
     model: "Model 3",
     price: 50,

@@ -42,9 +42,7 @@ const Testimonial = () => {
     <Slider {...settings}>
       <div className="testimonial py-4 px-3 outer-box">
         <p className="desc">
-          Very good service. I could not expect that I can get a car at 4.30 in
-          the morning. Even they have paid for fuel which I filled more. Very
-          transparent ❤️
+        I am very pleased to say that my experience of associating with Yasham Foundation has been excellent and I feel it is a privilege too. 
         </p>
 
         <div className="mt-3 d-flex align-items-center gap-4">
@@ -59,8 +57,7 @@ const Testimonial = () => {
 
       <div className="testimonial py-4 px-3 outer-box">
         <p className="desc">
-          Sanitized car was provided. The delivery and pickup boy was very
-          polite and helpful. This company is honest with their customers
+        By providing opportunities to needy children, Yasham is investing in a better future for India, since children are the future. 
         </p>
 
         <div className="mt-3 d-flex align-items-center gap-4">
@@ -75,8 +72,7 @@ const Testimonial = () => {
 
       <div className="testimonial py-4 px-3 outer-box">
         <p className="desc">
-          The app is as user friendly as the policies. The process is as easy as
-          nursery rhyme. Nicely maintained cars.
+        My good wishes to Yasham to continue reaching out to children who need them the most. keep up the good work.“
         </p>
 
         <div className="mt-3 d-flex align-items-center gap-4">
@@ -91,8 +87,7 @@ const Testimonial = () => {
 
       <div className="testimonial py-4 px-3 outer-box">
         <p className="desc">
-          The car delivery was done on time and we were satisfied with the
-          entire booking entire experience. Overall service was good.
+        Yasham Foundation believes that affection is greater than perfection. My appreciation for the excellent work Yasham is tremendous.
         </p>
 
         <div className="mt-3 d-flex align-items-center gap-4">

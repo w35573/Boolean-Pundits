@@ -31,29 +31,7 @@ const AboutSection = ({ aboutClass }) => {
                 community enrichment programs for communities.
               </p>
 
-              <div className="about__section-item d-flex align-items-center">
-                <p className="section__description d-flex align-items-center gap-2">
-                  <i className="ri-checkbox-circle-line"></i>Flexible Pricing
-                  Plans
-                </p>
-
-                <p className="section__description d-flex align-items-center gap-2">
-                  <i className="ri-checkbox-circle-line"></i> Home Delivery &
-                  Return
-                </p>
-              </div>
-
-              <div className="about__section-item d-flex align-items-center">
-                <p className="section__description d-flex align-items-center gap-2">
-                  <i className="ri-checkbox-circle-line"></i> Well Maintained
-                  Cars
-                </p>
-
-                <p className="section__description d-flex align-items-center gap-2">
-                  <i className="ri-checkbox-circle-line"></i> Contact-less
-                  Doorstep Delivery
-                </p>
-              </div>
+             
             </div>
           </Col>
 

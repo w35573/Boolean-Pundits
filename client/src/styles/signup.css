@@ -68,3 +68,10 @@ div.error {
 input.error {
   border: 1px solid #e7195a;
 }
+
+.signup-role{
+  display:flex;
+  justify-content:space-around;
+  margin-top:1.5rem;
+  
+}
