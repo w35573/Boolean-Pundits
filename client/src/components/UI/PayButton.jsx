@@ -1,16 +1,15 @@
 import axios from "axios";
-import { useAuthContext } from "../../hooks/useAuthContext";
+// import { useAuthContext } from "../../hooks/useAuthContext";
 import "../../styles/checkout.css";
 
 const PayButton = ({ checkOutItem }) => {
-  const { user } = useAuthContext();
+  // const { user } = useAuthContext();
 
   const handleCheckout = () => {
-    if (user) {
       axios
         .post("/api/stripe/create-checkout-session", {
           checkOutItem,
-          userId: user.email,
+          userId: "anonymous",
         })
         .then((response) => {
           if (response.data.url) {
@@ -20,9 +19,6 @@ const PayButton = ({ checkOutItem }) => {
         .catch((error) => {
           console.log(error);
         });
-    } else {
-      window.location.href = "/login";
-    }
   };
 
   return (
