@@ -28,7 +28,7 @@ const Routers = () => {
       <Route path="/contact" element={<Contact />} />
       <Route path="/sponsor" element={<Sponsor />} />
       <Route path="/volunteer" exact element={(user && user.role) === 'volunteer' ? <Volunteer /> : <Navigate to="/volunteer" />} />
-      <Route path="/student"  exact element={(user && user.role) === 'student' ? <Student /> : <Navigate to="/volunteer" />} />s
+      <Route path="/student" exact element={(user && user.role) === 'student' ? <Student /> : <Navigate to="/student" />} />
       <Route path="/login" exact element={!user ? <Login /> : <Navigate to="/home" />} />
       <Route path="/signup" exact element={!user ? <Signup /> : <Navigate to="/home" />} />
       <Route path="/profile" exact element={user ? <Profile /> : <Navigate to="/profile" />} />

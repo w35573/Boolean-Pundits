@@ -28,15 +28,15 @@ const studentSchema = new Schema({
 });
 
 // static entryData method
-studentSchema.statics.entryData = async function (UID, email, password, fName, mName, lName, age, gender, mobile, schoolName, schoolAddress, standard, country, state, district, address1, address2, pinCode, stream) {
+studentSchema.statics.entryData = async function (email, password, fName, mName, lName, age, gender, mobile, schoolName, schoolAddress, standard, country, state, district, address1, address2, pinCode, stream) {
 
-    const exists = await this.findOne({ UID })
+    const exists = await this.findOne({ email })
 
     if (exists) {
         throw Error('Student already registered!')
     }
 
-    const student = await this.create({ UID, email, password, fName, mName, lName, age, gender, mobile, schoolName, schoolAddress, standard, country, state, district, address1, address2, pinCode, stream })
+    const student = await this.create({email, password, fName, mName, lName, age, gender, mobile, schoolName, schoolAddress, standard, country, state, district, address1, address2, pinCode, stream })
 
     return student
 }

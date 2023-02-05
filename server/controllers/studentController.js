@@ -62,12 +62,12 @@ const getAllStudents = async (req, res) => {
 
 // enter student details
 const enterStudent = async (req, res) => {
-    const { UID, email, password, fName, mName, lName, age, gender, mobile, schoolName, schoolAddress, standard, country, state, district, address1, address2, pinCode, stream } = req.body
+    const { email, password, fName, mName, lName, age, gender, mobile, schoolName, schoolAddress, standard, country, state, district, address1, address2, pinCode, stream } = req.body
 
     try {
-        const student = await Student.entryData(UID, email, password, fName, mName, lName, age, gender, mobile, schoolName, schoolAddress, standard, country, state, district, address1, address2, pinCode, stream)
+        const student = await Student.entryData(email, password, fName, mName, lName, age, gender, mobile, schoolName, schoolAddress, standard, country, state, district, address1, address2, pinCode, stream)
 
-        res.status(200).json({ UID: student.UID, email: student.email, password: student.password, role: student.role })
+        res.status(200).json({ email: student.email, password: student.password, role: student.role })
     } catch (error) {
         res.status(400).json({ error: error.message })
     }
@@ -88,23 +88,36 @@ const insertManyEntries = async (req, res) => {
 
 // update Student
 const updateStudent = async (req, res) => {
-    const { UID, email, password, fName, mName, lName, age, gender, mobile, schoolName, schoolAddress, standard, country, state, district, address1, address2, pinCode, stream } = req.body
+    const { q1, q2, q3, email, fName, mName, lName, age, gender, mobile, schoolName, schoolAddress, standard, country, state, district, address1, address2 } = req.body
+
+    let stream = '';
+
+    if (q1 == 1 && q2 == 0 && q3 == 0) stream = 'JEE';
+    else if (q1 == 0 && q2 == 1 && q3 == 0) stream = 'MPSC/UPSC';
+    else if (q1 == 0 && q2 == 0 && q3 == 1) stream = 'NEET';
 
     try {
-        const student = await Student.updateOne({ UID: UID }, { UID, email, password, fName, mName, lName, age, gender, mobile, schoolName, schoolAddress, standard, country, state, district, address1, address2, pinCode, stream })
+        const student = await Student.updateOne({ email: email }, { email, fName, mName, lName, age, gender, mobile, schoolName, schoolAddress, standard, country, state, district, address1, address2, stream })
 
         res.status(200).json({ student })
+
+        console.log(student);
+
+        console.log(q1, q2, q3)
+
     } catch (error) {
         res.status(400).json({ error: error.message });
+
+        console.log(error);
     }
 }
 
 // delete Student
 const deleteStudent = async (req, res) => {
-    const { UID } = req.body;
+    const { email } = req.body;
 
     try {
-        Student.findOneAndDelete({ UID: UID }, (err, student) => {
+        Student.findOneAndDelete({ email: email }, (err, student) => {
             if (err) {
                 res.status(400).json({ status: 404, error: err.message });
             } else {
